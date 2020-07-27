@@ -1,0 +1,25 @@
+[class*=containerElement] {
+    display: flex;
+    margin: 0.2rem;
+    flex-wrap: wrap;
+}
+
+[class*=containerElement] > span {
+   min-width: 24px;
+   max-width: 24px;
+   margin-bottom: 0;
+   text-transform: uppercase;
+}
+
+.containerElement_title {
+    font-size: 1rem;
+    font-weight: 400;
+    align-self: flex-end;
+    padding-right: 5rem;
+    padding-top: 5rem;
+}   
+
+.containerElement_title > span {
+   min-width: 16px;
+   max-width: 16px;
+}
