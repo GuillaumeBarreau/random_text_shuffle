@@ -26,22 +26,10 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-# Build and start your React environment with single command:
-
-Just run:
-
-* $ docker-compose up
-
-And wait until you see the following in the console:
-
-* To gracefully stop undetached run just press CTRL+C
-
+edite
 # Test your React Installation:
 
-* Check your code at src/ 
 * Open http://localhost:3001
-* Dance!
 
 # Docker-compose basic handling:
 
