@@ -5,14 +5,14 @@ import { colors , chars } from '../../logic/RandomTextShuffle.logic';
 
 export const RandomTextShuffle = ({children, type}) => {
 
-    let text = children;
-    let lasText = '';
+    const [randomText, setRandomText] = useState(children);
+    const [finalText, setFinalText] = useState('');
 
-    const [randomText, setRandomText] = useState(text);
-    const [finalText, setFinalText] = useState(lasText);
+    let lastText = '';
+    let text = randomText;
 
     useEffect(() => {
-
+        
         const setIntervalRandomText = setInterval(() => {
             setRandomText([...text].map(c => {
                 const randomTextComponent = (c === ' ')
@@ -31,10 +31,10 @@ export const RandomTextShuffle = ({children, type}) => {
             let textSlice = text.slice(0, 1);
             text = text.slice(1);
 
-            lasText = lasText + textSlice
+            lastText = lastText + textSlice
 
             setRandomText(text);
-            setFinalText(lasText);
+            setFinalText(lastText);
             
             if (text.length === 0) {
                 clearInterval(setIntervalFinalText);
@@ -76,6 +76,6 @@ RandomTextShuffle.defaultProps = {
 }
 
 RandomTextShuffle.propTypes = {
-    children: PropTypes.node,
+    children: PropTypes.string,
     type: PropTypes.string,
 }
