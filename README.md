@@ -27,42 +27,48 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+# Build and start your React environment with single command:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Just run:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* $ docker-compose up
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+And wait until you see the following in the console:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* To gracefully stop undetached run just press CTRL+C
 
-## Learn More
+# Test your React Installation:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Check your code at src/ 
+* Open http://localhost:3001
+* Dance!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Docker-compose basic handling:
 
-### Code Splitting
+Run in detached mode:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+* $ docker-compose up -d
 
-### Analyzing the Bundle Size
+In detached mode, you won't have direct output from the container, so you'll have to check the container logs to see if the build ended (find the above "Compiled successfully" message):
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+* $ docker-compose logs
 
-### Making a Progressive Web App
+Stop a detached mode run:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+* $ docker-compose down
 
-### Advanced Configuration
+Run commands into your container without going into, from your host machine:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+* $ docker-compose exec {container-id} mycommand
 
-### Deployment
+Enter into your container to run commands inside it (ssh-like):
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+* $ docker-compose exec {container-id} bash
 
-### `npm run build` fails to minify
+Exit your container, and go back to your host machine:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* $ exit
+
+For advanced usage, follow the docker-compose command-line reference:
+
+https://docs.docker.com/compose/reference/
