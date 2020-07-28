@@ -57,7 +57,6 @@ export const RandomTextShuffle = ({children}) => {
         <>
             {
                 [...finalText].map((c,i) => (<span key={i}>{c}</span>))
-            
             }
             {
                 [...randomText].map((c,i) => {
@@ -72,7 +71,6 @@ export const RandomTextShuffle = ({children}) => {
                                 }
                             </span>
                         )
-
                     return randomTextInnerHtml
                 })
             }
