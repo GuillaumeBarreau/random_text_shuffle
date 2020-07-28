@@ -3,16 +3,20 @@ import PropTypes from 'prop-types';
 import './RandomTextShuffle.css';
 import { colors , chars } from '../../logic/RandomTextShuffle.logic';
 
-export const RandomTextShuffle = ({children, type}) => {
+export const RandomTextShuffle = ({children}) => {
 
     const [randomText, setRandomText] = useState(children);
     const [finalText, setFinalText] = useState('');
 
-    let lastText = '';
-    let text = randomText;
-
+    const countTotalChars = children.length;
+    
     useEffect(() => {
-        
+        let lastText = finalText;
+        let text = randomText;
+    
+        // On stoke dans le state setRandomText() un caractére aléatoire pour chaque chaine de caractère de la variable ${text}.
+        // Si le caractére est un espace on retourne celui-ci sans le modifier.
+
         const setIntervalRandomText = setInterval(() => {
             setRandomText([...text].map(c => {
                 const randomTextComponent = (c === ' ')
@@ -22,10 +26,14 @@ export const RandomTextShuffle = ({children, type}) => {
                 return randomTextComponent
             }));
 
+            // lorsque le nombre chaine de caratére arrive à Zero on stop la fonction Interval
+
             if (text.length === 0) {
                 clearInterval(setIntervalRandomText);
             }
         }, 50);
+
+        // On retire le premier caractére de la chaine de caractère de ${text}
 
         const setIntervalFinalText = setInterval(() => {
             let textSlice = text.slice(0, 1);
@@ -36,10 +44,12 @@ export const RandomTextShuffle = ({children, type}) => {
             setRandomText(text);
             setFinalText(lastText);
             
+            // lorsque le nombre chaine de caratére arrive à Zero on stop la fonction Interval
+
             if (text.length === 0) {
                 clearInterval(setIntervalFinalText);
             }
-        }, 75);
+        }, (6000 / countTotalChars));
         
     }, []);
 
@@ -72,10 +82,8 @@ export const RandomTextShuffle = ({children, type}) => {
 
 RandomTextShuffle.defaultProps = {
     children: 'text not found',
-    type: null,
 }
 
 RandomTextShuffle.propTypes = {
     children: PropTypes.string,
-    type: PropTypes.string,
 }
