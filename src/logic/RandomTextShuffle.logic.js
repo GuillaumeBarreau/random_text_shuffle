@@ -9,8 +9,8 @@ export const colors = [
 ];
 
 export const colorsPattern = [
-    ['#1b262c', '#0f4c75', '#3282b8', '#bbe1fa', '#e8505b', '#f9d56e', '#f3ecc2', '#14b1ab'],
-    ['#eeecda', '#f08a5d', '#b83b5e', '#6a2c70', '#e7305b', '#e2979c', '#f7f5dd', '#9bdeac'],
+    ['#607d8b', '#0f4c75', '#3282b8', '#bbe1fa', '#e8505b', '#f9d56e', '#ff9800', '#14b1ab'],
+    ['#673ab7', '#f08a5d', '#b83b5e', '#6a2c70', '#e7305b', '#e2979c', '#ff5722', '#9bdeac'],
     ['#ff0000', '#ffa500', '#ffff00', '#008000', '#0000ff', '#4b0082', '#ee82ee'],
     [
         '#f44336', '#e91e63', '#9c27b0', '#673ab7',
