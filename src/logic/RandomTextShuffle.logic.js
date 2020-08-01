@@ -8,6 +8,19 @@ export const colors = [
     '#607d8b'
 ];
 
+export const colorsPattern = [
+    ['#1b262c', '#0f4c75', '#3282b8', '#bbe1fa', '#e8505b', '#f9d56e', '#f3ecc2', '#14b1ab'],
+    ['#eeecda', '#f08a5d', '#b83b5e', '#6a2c70', '#e7305b', '#e2979c', '#f7f5dd', '#9bdeac'],
+    ['#ff0000', '#ffa500', '#ffff00', '#008000', '#0000ff', '#4b0082', '#ee82ee'],
+    [
+        '#f44336', '#e91e63', '#9c27b0', '#673ab7',
+        '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4',
+        '#009688', '#4caf50', '#8bc34a', '#cddc39',
+        '#ffeb3b', '#ffc107', '#ff9800', '#ff5722',
+        '#795548', '#9e9e9e', '#607d8b'
+    ]
+]
+
 export const chars = [
     'A', 'B', 'C', 'D',
     'E', 'F', 'G', 'H',
