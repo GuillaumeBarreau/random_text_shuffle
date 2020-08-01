@@ -26,3 +26,15 @@ Container.propTypes = {
     component: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     variant: PropTypes.string
 };
+
+
+const WelcomeTitle = ({primary, user}) => {
+
+    const message = (user) ? `Welcome${user}` : 'Welcome!';
+
+    const element = (primary) ? <h1>{message}</h1> : <h2>{message}</h2>;
+
+    return element
+}
+
+   
