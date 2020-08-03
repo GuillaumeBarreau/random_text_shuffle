@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './RandomTextShuffle.css';
-import { colorsPattern, chars, colorsBasic } from '../../logic/RandomTextShuffle.logic';
+import { chars, colorsBasic } from '../../logic/RandomTextShuffle.logic';
 
 export const RandomTextShuffle = ({children}) => {
 
@@ -11,10 +11,10 @@ export const RandomTextShuffle = ({children}) => {
 
     const countTotalChars = children.length;
     
+    let text = randomText;
+    let lastText = finalText;
+
     useEffect(() => {
-        let lastText = finalText;
-        let text = randomText;
-    
         // On stoke dans le state setRandomText() un caractére aléatoire pour chaque chaine de caractère de la variable ${text}.
         // Si le caractére est un espace on retourne celui-ci sans le modifier.
 
@@ -34,6 +34,9 @@ export const RandomTextShuffle = ({children}) => {
             }
         }, 75);
 
+    }, []);
+
+    useEffect(() => {
         // On retire le premier caractére de la chaine de caractère de ${text}
 
         const setIntervalFinalText = setInterval(() => {
@@ -44,14 +47,14 @@ export const RandomTextShuffle = ({children}) => {
 
             setRandomText(text);
             setFinalText(lastText);
-            
+
             // lorsque le nombre chaine de caratére arrive à Zero on stop la fonction Interval
 
             if (text.length === 0) {
                 clearInterval(setIntervalFinalText);
             }
         }, (6000 / countTotalChars));
-        
+
     }, []);
 
     return (
