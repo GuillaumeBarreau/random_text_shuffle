@@ -1,15 +1,16 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { RandomTextShuffle } from './';
-import { colors, chars } from '../../logic/RandomTextShuffle.logic';
+import { colorsPattern, chars, colorsBasic } from '../../logic/RandomTextShuffle.logic';
 
 jest.mock('../../logic/RandomTextShuffle.logic', () => ({
-    colors: ['red'],
+    colorsPattern: [['red']],
+    colorsBasic: ['red'],
     chars: ['A']
 }));
 
 it('renders without crashing', () => {
-    shallow(<RandomTextShuffle />);
+    shallow(<RandomTextShuffle>children</RandomTextShuffle>);
 });
 
 describe('RandomTextShuffle Component', () => {
