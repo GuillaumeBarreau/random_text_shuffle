@@ -7,12 +7,14 @@ export const Container = ({
     children,
     component,
     variant,
+    ...props
 }) => React.createElement(
     component,
     {
-        className: variant ? `containerElement_${variant}` : `containerElement`
+        className: variant ? `containerElement_${variant}` : `containerElement`,
+        ...props
     },
-    children
+    children,
 );
 
 Container.defaultProps = {

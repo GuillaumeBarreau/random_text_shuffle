@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './RandomTextShuffle.css';
-import { colorsPattern , chars } from '../../logic/RandomTextShuffle.logic';
+import { colorsPattern, chars, colorsBasic } from '../../logic/RandomTextShuffle.logic';
 
 export const RandomTextShuffle = ({children}) => {
 
     const [randomText, setRandomText] = useState(children);
     const [finalText, setFinalText] = useState('');
-    const [colors] = useState(colorsPattern[Math.floor(Math.random() * colorsPattern.length)]);
+    const [colors] = useState(colorsBasic);
 
     const countTotalChars = children.length;
     
@@ -50,7 +50,7 @@ export const RandomTextShuffle = ({children}) => {
             if (text.length === 0) {
                 clearInterval(setIntervalFinalText);
             }
-        }, (8000 / countTotalChars));
+        }, (6000 / countTotalChars));
         
     }, []);
 

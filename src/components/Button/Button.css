@@ -1,0 +1,93 @@
+.containerButton {
+    background: repeating-linear-gradient(240deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    margin-top: 5rem;
+    padding: 0.25rem;
+    display: flex;
+    justify-content: center;
+    width: min-content;
+    align-self: center;
+    height: 50px;
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0.2rem 0.1875rem 0.1875rem 0rem;
+}
+
+.containerButton:hover {
+    animation: 0.4s animateBackground infinite;
+}
+
+.containerButton_button {
+    align-self: center;
+    width: 18.75rem;
+    padding: 1rem;
+    color: #282c34;
+    background-color: #282c34;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    font-size: calc(10px + 0.8vmin);
+    cursor: pointer;
+    outline: none;
+}
+
+.containerButton_button:hover {
+    background-color: #181a1f;
+}
+
+.containerButton_button:focus {
+    background-color: #282c34;
+}
+
+@keyframes animateBackground {
+  0% { 
+        background: repeating-linear-gradient(240deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  6.25% { 
+        background: repeating-linear-gradient(260deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  12.5% { 
+        background: repeating-linear-gradient(280deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #8369b1,#6a74aa, #72a4cc, #79e2dd);
+    }
+  18.75% { 
+        background: repeating-linear-gradient(300deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  25% { 
+        background: repeating-linear-gradient(320deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  31.25% { 
+        background: repeating-linear-gradient(340deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  37.5% { 
+        background: repeating-linear-gradient(360deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  43.75% { 
+        background: repeating-linear-gradient(0deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  50% { 
+        background: repeating-linear-gradient(20deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  56.25% { 
+        background: repeating-linear-gradient(40deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  62.5% { 
+        background: repeating-linear-gradient(60deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  68.75% { 
+        background: repeating-linear-gradient(80deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  75% { 
+        background: repeating-linear-gradient(100deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  81.25% { 
+        background: repeating-linear-gradient(120deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  87.5% { 
+        background: repeating-linear-gradient(140deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  93.75% { 
+        background: repeating-linear-gradient(160deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+  100% { 
+        background: repeating-linear-gradient(180deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
+    }
+}
