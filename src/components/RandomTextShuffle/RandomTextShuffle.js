@@ -47,9 +47,7 @@ export const RandomTextShuffle = ({ children}) => {
         }, (6000 / countTotalChars));
 
         return () => {
-            clearInterval(setIntervalRandomText);
-            clearInterval(setIntervalFinalText);
-            return;
+            return [clearInterval(setIntervalRandomText), clearInterval(setIntervalFinalText)];
         };
         
     }, [children]);
