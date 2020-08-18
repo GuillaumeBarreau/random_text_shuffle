@@ -5,8 +5,8 @@
 }
 
 [class*=containerElement] > span {
-   min-width: 24px;
-   max-width: 24px;
+   min-width: 1.5rem;
+   max-width: 1.5rem;
    margin-bottom: 0;
    text-transform: uppercase;
 }
@@ -22,4 +22,14 @@
 .containerElement_title > span {
    min-width: 16px;
    max-width: 16px;
+}
+
+@media screen and (max-width: 640px) {
+    [class*=containerElement] > span {
+        min-width: 1rem;
+        max-width: 1rem;
+    }
+    .containerElement_title {
+        font-size: 0.8rem;
+    }   
 }

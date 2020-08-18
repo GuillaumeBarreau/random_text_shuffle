@@ -1,1 +1,1 @@
-export * from './RandomTextShuffle.js';
+export * from './RandomTextShuffle';

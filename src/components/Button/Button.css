@@ -1,13 +1,14 @@
 .containerButton {
     background: repeating-linear-gradient(240deg, #b1eb82,#eb8982, #ee97b4, #aa71b4, #673ab7,#6a74aa, #72a4cc, #79e2dd);
-    margin-top: 5rem;
+    margin-top: 2.5rem;
     padding: 0.25rem;
     display: flex;
     justify-content: center;
     width: min-content;
     align-self: center;
-    height: 50px;
-    width: 200px;
+    height: 3.125rem;
+    width: 12.5rem;
+    cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.8) 0.2rem 0.1875rem 0.1875rem 0rem;
 }
 
@@ -25,9 +26,17 @@
     font-weight: 700;
     text-transform: uppercase;
     border: none;
-    font-size: calc(10px + 0.8vmin);
+    font-size: calc(0.625rem + 0.8vmin);
     cursor: pointer;
     outline: none;
+}
+
+.containerButton_button:disabled {
+    cursor: not-allowed;
+}
+
+.containerButton_button:hover {
+    cursor: pointer;
 }
 
 .containerButton_button:hover {

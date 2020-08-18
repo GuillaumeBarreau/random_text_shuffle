@@ -3,23 +3,22 @@ import PropTypes from 'prop-types';
 import './RandomTextShuffle.css';
 import { chars, colorsBasic } from '../../logic/RandomTextShuffle.logic';
 
-export const RandomTextShuffle = ({children}) => {
+export const RandomTextShuffle = ({ children}) => {
 
     const [randomText, setRandomText] = useState(children);
-    const [finalText, setFinalText] = useState('');
+    const [finalText, setFinalText] = useState([]);
     const [colors] = useState(colorsBasic);
-
-    const countTotalChars = children.length;
     
-    let text = randomText;
-    let lastText = finalText;
-
     useEffect(() => {
+        // On récupére le nombre total de caractére dans la props ${Children}.
+        const countTotalChars = children.length;
+
+        let storeText = children;
+
         // On stoke dans le state setRandomText() un caractére aléatoire pour chaque chaine de caractère de la variable ${text}.
         // Si le caractére est un espace on retourne celui-ci sans le modifier.
-
         const setIntervalRandomText = setInterval(() => {
-            setRandomText([...text].map(c => {
+            setRandomText([...storeText].map(c => {
                 const randomTextComponent = (c === ' ')
                     ? c
                     : chars[Math.floor(Math.random() * chars.length)]
@@ -27,35 +26,33 @@ export const RandomTextShuffle = ({children}) => {
                 return randomTextComponent
             }));
 
-            // lorsque le nombre chaine de caratére arrive à Zero on stop la fonction Interval
-
-            if (text.length === 0) {
-                clearInterval(setIntervalRandomText);
-            }
         }, 75);
 
-    }, []);
-
-    useEffect(() => {
-        // On retire le premier caractére de la chaine de caractère de ${text}
+        // On init storeFinalText afin de lui assigner une nouvelles valeurs à chaque Interval 
+        let storeFinalText = '';
 
         const setIntervalFinalText = setInterval(() => {
-            let textSlice = text.slice(0, 1);
-            text = text.slice(1);
+            // On récupére la premiére lettre de la chaine de caractére de notre ${storeText}.
+            const getFirstLetterToText = storeText.slice(0, 1);
+            
+            // On assigne la valeur ${storeText} à ${storeText} en retirant la premiére lettre de la chaine de caractére.
+            storeText = storeText.slice(1);
+            
+            // On accumule les ${getFirstLetterToText} à chaque interval pour récupérer le texte final.
+            storeFinalText = storeFinalText + getFirstLetterToText
 
-            lastText = lastText + textSlice
+            setRandomText(storeText);
+            setFinalText(storeFinalText);
 
-            setRandomText(text);
-            setFinalText(lastText);
-
-            // lorsque le nombre chaine de caratére arrive à Zero on stop la fonction Interval
-
-            if (text.length === 0) {
-                clearInterval(setIntervalFinalText);
-            }
         }, (6000 / countTotalChars));
 
-    }, []);
+        return () => {
+            clearInterval(setIntervalRandomText);
+            clearInterval(setIntervalFinalText);
+            return;
+        };
+        
+    }, [children]);
 
     return (
         <>

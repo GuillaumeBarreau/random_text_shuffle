@@ -1,9 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './Container.css';
 
-export const Container = ({
+type Props = {
+    children: React.ReactNode,
+    component: string,
+    variant: string,
+}
+
+export const Container: React.FC<Props> = ({
     children,
     component,
     variant,
@@ -23,10 +28,3 @@ Container.defaultProps = {
     variant: ''
 };
 
-Container.propTypes = {
-    children: PropTypes.node,
-    component: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    variant: PropTypes.string
-};
-
-   

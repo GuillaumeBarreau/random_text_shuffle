@@ -16,15 +16,23 @@
   justify-content: center;
   background-color: #282c34;
   min-height: 100vh;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(0.625rem + 2vmin);
   color: white;
   padding: 0 5rem;
   font-weight: 700;
 }
 
+@media screen and (max-width: 640px) {
+  .App-header {
+    padding: 0 2rem;
+    font-size: calc(0.625rem + 1.5vmin);
+  }
+}
+
 .App-header > section {
   display: flex;
   flex-direction: column;
+  min-height: 20rem;
 }
 
 .App-link {

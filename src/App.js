@@ -34,8 +34,12 @@ function App() {
             </RandomTextShuffle>
           </Container>
           <br />
-          <Button eventOnclick={onButtonClick}>New Quote</Button>
         </Container>
+        <Button 
+          eventOnclick={onButtonClick}
+        >
+            New Quote
+        </Button>
       </header>
     </div>
   );
